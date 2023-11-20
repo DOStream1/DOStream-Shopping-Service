@@ -7,7 +7,7 @@ COPY package*.json .
 RUN npm install
 
 COPY . .
-COPY ./shopping/.env.dev .env
+COPY .env.dev .env
 
 EXPOSE 8003
 
