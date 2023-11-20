@@ -1,26 +1,4 @@
 const dotEnv = require("dotenv");
-const fs = require('fs');
-
-const loadConfigFromK8S = () => {
-  try {
-    const configMapPath = '/etc/config/shopping-config.json'; // Adjust the path accordingly
-    const configMapData = fs.readFileSync(configMapPath, 'utf8');
-    const configMapJson = JSON.parse(configMapData);
-
-    process.env.PORT = configMapJson.PORT;
-    process.env.MONGODB_URI = configMapJson.MONGODB_URI;
-    process.env.APP_SECRET = configMapJson.APP_SECRET;
-    process.env.BASE_URL = configMapJson.BASE_URL;
-    process.env.EXCHANGE_NAME = configMapJson.EXCHANGE_NAME;
-    process.env.MSG_QUEUE_URL = configMapJson.MSG_QUEUE_URL;
-  } catch (error) {
-    console.error('Error loading configuration from ConfigMap:', error);
-    // Handle the error as needed
-  }
-};
-
-// Load configuration from Kubernetes ConfigMap
-loadConfigFromK8S();
 
 if (process.env.NODE_ENV !== "prod") {
   const configFile = `./.env.${process.env.NODE_ENV}`;
