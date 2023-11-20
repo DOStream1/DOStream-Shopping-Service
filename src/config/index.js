@@ -7,6 +7,8 @@ if (process.env.NODE_ENV !== "prod") {
   dotEnv.config();
 }
 
+console.log("Loaded environment variables:", process.env);
+
 module.exports = {
   PORT: process.env.PORT,
   DB_URL: process.env.MONGODB_URI,
@@ -17,5 +19,3 @@ module.exports = {
   CUSTOMER_SERVICE: "customer_service",
   SHOPPING_SERVICE: "shopping_service",
 };
-
-console.log("Loaded environment variables:", process.env);
