@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: shopping
-          image: pirabanjan/buy-it-shopping-service:main # Replace with your image and tag
+          image: pirabanjan/buy-it-shopping-service:my-tag1 # Replace with your image and tag
           ports:
             - containerPort: 8003
           resources:
