@@ -22,7 +22,7 @@ jobs:
       run: pip install requests
 
     - name: Run Python script
-      run: python ProductServicePyhtonCode.py ${{ env.BASE_URL }}  # Pass the base URL as a parameter
+      run: python ShoppingServicePyhtonCode.py ${{ env.BASE_URL }}  # Pass the base URL as a parameter
 
     - name: Upload output as artifact
       uses: actions/upload-artifact@v2
