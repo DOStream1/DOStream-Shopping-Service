@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: shopping
-          image: registry.gitlab.com/dostream1/application/backend/shopping:main # Replace with your image and tag
+          image: pirabanjan/buy-it-shopping-service:main # Replace with your image and tag
           ports:
             - containerPort: 8003
           resources:
